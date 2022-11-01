@@ -34,6 +34,6 @@ $ npm start
 ```
 
 > **Nota**
-> Instale a extensão Chrome para consumir a Api ClimaTempo, 
+> Instale a extensão Chrome (Allow CORS: Access-Control-Allow-Origin) para consumir a Api ClimaTempo, 
 [download](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf)
 
