@@ -31,7 +31,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import '../styles/components/cards.css';
 import '../styles/components/medias/cards.css';
-import { getSpaceUntilMaxLength } from '@testing-library/user-event/dist/utils';
 
 export const Cards = ( ) => {
   const [ input, setInput ] = useState< string > ( '' )
@@ -222,7 +221,7 @@ export const Cards = ( ) => {
       />
     </>
     );
-  }
+}
   
 
   
