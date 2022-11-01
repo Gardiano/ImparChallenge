@@ -17,7 +17,6 @@ Tecnologias usadas nesse projeto.
 <br />
 
 ## Como Usar 📂
-Clone esse repositório e siga as instruções a seguir.
 
 ```bash
 # Clone o repositório
