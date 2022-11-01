@@ -33,7 +33,7 @@ export const notFoundToast = ( ) => toast.warning( ' Informe um Pokemon válido:
   progress: undefined,
 });
 
-export const editToast = ( ) => toast.warning( ' Funcionalidade não implementada, aguarde! ' , {
+export const editToast = ( ) => toast.warning( ' Funcionalidade não implementada ' , {
   position: "bottom-right",
   autoClose: 2000,
   hideProgressBar: true,

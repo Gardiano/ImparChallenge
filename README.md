@@ -17,14 +17,13 @@ Tecnologias usadas nesse projeto.
 <br />
 
 ## Como Usar 📂
-Clone esse repositório e siga as instruções a seguir.
 
 ```bash
 # Clone o repositório
-$ git clone https://github.com/amitmerchant1990/electron-markdownify
+$ git clone https://github.com/Gardiano/ImparChallenge.git
 
 # Vá para o repositório
-$ cd electron-markdownify
+$ cd ImparChallenge
 
 # Instale as dependências
 $ npm install
@@ -34,6 +33,6 @@ $ npm start
 ```
 
 > **Nota**
-> Instale a extensão Chrome para consumir a Api ClimaTempo, 
+> Instale a extensão Chrome (Allow CORS: Access-Control-Allow-Origin) para consumir a Api ClimaTempo, 
 [download](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf)
 

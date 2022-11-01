@@ -58,7 +58,7 @@ export const Cards = ( ) => {
 
     window.scrollTo( 0, 0 );
 
-    // getClima( );
+    getClima( );
   }, [ input ] );
 
   const handleChange: any = ( e: React.ChangeEvent<HTMLTextAreaElement> ) => {
