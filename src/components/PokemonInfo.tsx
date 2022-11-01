@@ -1,5 +1,5 @@
 
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 import { useEffect, useState } from 'react';
 
@@ -9,10 +9,13 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 
 import { PokemonsInfoType } from '../models/pokemonInfo';
 
+import { BsArrowLeftCircle } from 'react-icons/bs';
+
 import '../styles/components/pokemonInfo.css';
 import '../styles/components/medias/pokemonInfo.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 export const PokemonInfo = ( ) => {
 
@@ -33,7 +36,9 @@ const getPokemonById: ( ) => void = async ( ) => {
 
 return (
     <div className='pokemonInfoContainer'>
+      <Link to='/'> <BsArrowLeftCircle /> </Link>
       <div className='pokemonInfoBox'>
+        
         <span>
           <img src={ pokemon?.sprites.other.dream_world.front_default } alt='image' />
         </span>

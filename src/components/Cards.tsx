@@ -51,14 +51,11 @@ export const Cards = ( ) => {
 
   useEffect( (  ) => {
     fetchPokemon( );
-
+    getClima( );
     if ( input.length === 0 ) {
       setLoadingSearchResults( false );
     }
-
     window.scrollTo( 0, 0 );
-
-    getClima( );
   }, [ input ] );
 
   const handleChange: any = ( e: React.ChangeEvent<HTMLTextAreaElement> ) => {
