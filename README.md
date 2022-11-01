@@ -21,10 +21,10 @@ Clone esse repositório e siga as instruções a seguir.
 
 ```bash
 # Clone o repositório
-$ git clone https://github.com/amitmerchant1990/electron-markdownify
+$ git clone https://github.com/Gardiano/ImparChallenge.git
 
 # Vá para o repositório
-$ cd https://github.com/Gardiano/-mparChallenge.git
+$ cd ImparChallenge
 
 # Instale as dependências
 $ npm install
