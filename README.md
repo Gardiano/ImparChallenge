@@ -24,7 +24,7 @@ Clone esse repositório e siga as instruções a seguir.
 $ git clone https://github.com/amitmerchant1990/electron-markdownify
 
 # Vá para o repositório
-$ cd electron-markdownify
+$ cd https://github.com/Gardiano/-mparChallenge.git
 
 # Instale as dependências
 $ npm install
