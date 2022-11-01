@@ -1,0 +1,161 @@
+
+.deleteModalContainer {
+  all: unset;
+  width: 100%;
+  height: 100%;
+
+  left: 0;
+
+  display: flex;
+  margin-top: -64px;
+
+  z-index: 99999;
+  position: fixed;
+  
+  background: #f8f8f8e5;
+  flex-direction: column;
+  backdrop-filter: blur( 5px );
+}
+
+.deleteModalContainer .deleteModalBox {
+  width: calc( 100% - 70px );
+  max-width: 438px;
+  height: 434px;
+
+  display: flex;
+
+  border-radius: 8px;
+  flex-direction: column;
+  justify-content: flex-start;
+  
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  -webkit-box-shadow: 0px 0px 14px -1px rgb(157, 157, 157);
+  -moz-box-shadow: 0px 0px 14px -1px rgb(139, 139, 139);
+  box-shadow: 0px 0px 14px -1px rgb(151, 151, 151);
+}
+
+.deleteModalContainer .deleteModalBox div:nth-child( 1 ) {
+  height: 50px;
+
+  display: flex;
+  float: right;
+  margin: 0 auto 0;
+  justify-content: flex-end;
+}
+
+.deleteModalContainer .deleteModalBox div .closeModalButton:nth-child( 1 ) {
+  color: #f8f8f8;
+  width: 34px;
+  height: 34px;
+
+  border: 0;
+
+  top: -25px;
+  left: 53px;
+
+  position: relative;
+  border-radius: 50px;
+  box-shadow: 0px 3px 6px #E7631636;
+  background: #E76316 0% 0% no-repeat padding-box;
+
+}
+
+.deleteModalContainer .deleteModalBox span {
+  width: 159px;
+  height: 159px;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  
+  border-radius: 100px;
+  border: 6px solid #E4E4E4;
+  background: #DB25250F 0% 0% no-repeat padding-box;
+}
+
+.deleteModalContainer .deleteModalBox span svg {
+  color: #DB2525;
+
+  width: 90px;
+  height: 90px;
+}
+
+.deleteModalContainer .deleteModalBox h1 {
+  color: #DB2525;
+  height: 40px;
+
+  text-align: center;
+
+  margin: 20px auto 20px;
+  
+  font-family: 'Mulish', sans-serif;
+}
+
+.deleteModalContainer .deleteModalBox label {
+  color: #454545;
+  width: 190px;
+  height: 15px;
+
+  text-align: left;
+
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Mulish', sans-serif;
+  
+  text-transform: uppercase;
+}
+
+.deleteModalContainer .deleteModalBox hr {
+  width: calc(100% - 70px);
+  max-width: 364px;
+  height: 0px;
+  border: 1px solid #E4E4E4;
+}
+
+.deleteModalContainer .deleteModalBox div {
+  width: calc( 100% -50px );
+  max-width: 364px;
+  height: auto;
+
+  display: flex;
+  margin: 0;
+
+  gap: 12px;
+
+  justify-content: center
+}
+
+.deleteModalContainer .deleteModalBox div button {
+  width: 165px;
+  height: 48px;
+
+  border: 0;
+  outline: 0;
+
+  font-size: 18px;
+
+  background: #DB2525 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #92207242;
+  border-radius: 8px;
+}
+
+.deleteModalContainer .deleteModalBox div button:nth-child( 1 ) {
+  color: #f8f8f8;
+  font-weight: 700;
+}
+
+.deleteModalContainer .deleteModalBox div button:nth-child( 2 ) {
+  color: #DB2525;
+  font-weight: 700;
+  border: 1px solid #DB2525;
+  box-shadow: 0px 3px 6px #92207242;
+  background: #f8f8f8;
+}
+
+
+
+
+
+
+

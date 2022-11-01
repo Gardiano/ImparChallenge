@@ -1,0 +1,99 @@
+
+.pokemonInfoContainer {
+  width: 100%;
+  max-width: 1440px;
+
+  margin: 7rem auto 2rem;
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.pokemonInfoContainer .pokemonInfoBox {
+  width: calc( 100% - 70px );
+  max-width: 900px;
+  height: 830px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  background: #ffff;
+
+  -webkit-box-shadow: 0px 0px 14px -1px rgb(157, 157, 157);
+  -moz-box-shadow: 0px 0px 14px -1px rgb(139, 139, 139);
+  box-shadow: 0px 0px 14px -1px rgb(151, 151, 151);
+}
+
+.pokemonInfoContainer .pokemonInfoBox span {
+  width: 100%;
+  max-width: 220px;
+  height: 220px;
+  
+  margin: 20px auto 0;
+  border-radius: 150px;
+  background: #dddddd 0% 0% no-repeat padding-box;
+}
+
+.pokemonInfoContainer .pokemonInfoBox img {
+  width: 220px;
+  height: 220px;
+
+  margin: auto;
+  display: block;
+}
+
+.pokemonInfoContainer .pokemonInfoBox h1 {
+  font-size: 28px;
+  font-family: 'Mulish', sans-serif;
+  text-transform: uppercase;
+  margin: 25px auto 25px;
+}
+
+.pokemonInfoContainer .pokemonInfoBox div {
+  width: 100%;
+  max-width: 700px;
+  height: 300px;
+
+  gap: 15px;
+  display: flex;
+
+  flex-direction: column;
+}
+
+.pokemonInfoContainer .pokemonInfoBox div label {
+  width: calc( 100% - 50px );
+
+  display: flex;
+  margin: auto;
+  padding: 12px;
+
+  font-weight: 600;
+  text-align: center;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+  text-transform: uppercase;
+  border-radius: 12px;
+  background: #f5f5f5 0% 0% no-repeat padding-box;
+}
+
+/* react bootstrap progress bar */
+body #root .progress {
+  width: 75%;
+  height: 20px;
+  margin: auto;
+  background: #dddddd;
+  font-family: 'Mulish', sans-serif;
+}
+
+body #root .progress-bar {
+  height: 30px;
+  font-size: 16px;
+}
+

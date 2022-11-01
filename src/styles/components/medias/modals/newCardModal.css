@@ -1,0 +1,24 @@
+
+@media screen and ( max-width: 550px ) {
+
+  .newCardContainer .newCardBox span h1 {
+    font-size: 22px;
+  }
+
+  .newCardContainer .newCardBox input {
+    height: 44px;
+  }
+
+  .newCardContainer .newCardBox label {
+    height: 38px;
+    text-align: center;
+  }
+
+  .newCardContainer .newCardBox .customFileUpdateBox {
+    justify-content: center;
+  }
+
+  .newCardContainer .newCardBox .customFileUpload b {
+    font-size: 12px;
+  }
+}

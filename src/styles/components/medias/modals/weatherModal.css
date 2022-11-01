@@ -1,0 +1,16 @@
+
+@media screen and ( max-width: 430px ) {
+  .weatherContainer .weatherBox b {
+    font-size: 26px;
+  }
+
+  .weatherContainer .weatherBox div label {
+    font-size: 16px;
+  }
+
+  .weatherContainer .weatherBox span {
+    font-size: 16px;
+  }
+
+}
+  

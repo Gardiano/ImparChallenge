@@ -1,0 +1,29 @@
+
+ header {
+  width: 100%;
+  /* max-width: 1440px; */
+  height: 64px;
+
+  margin: 0 auto;
+
+  background: rgb(174,39,111);
+  background: linear-gradient(272deg, rgba(174,39,111,1) 0%, rgba(95,20,120,1) 100%);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+ }
+
+ header svg {
+  width: 192px;
+  height: 37px;
+
+  position: relative;
+  top: 14px;
+  left: 14px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background: url('../../assets/logo-teste.svg');
+ }

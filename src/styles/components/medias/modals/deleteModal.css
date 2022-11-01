@@ -1,0 +1,20 @@
+
+@media screen and ( max-width: 550px ) {
+  .deleteModalContainer .deleteModalBox .deleteModalButtons {
+    flex-direction: column;
+  }
+
+  .deleteModalContainer .deleteModalBox span {
+    width: 120px;
+    height: 120px;
+  }
+
+  .deleteModalContainer .deleteModalBox span svg {
+    width: 58px;
+    height: 58px;
+  }
+  
+  .deleteModalContainer .deleteModalBox div button {
+    font-size: 16px;
+  }
+}

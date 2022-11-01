@@ -1,0 +1,25 @@
+
+@media screen and ( max-width: 550px ) { 
+  main .resultBox {
+   height: 100px;
+
+   margin-top: 20px;
+
+   justify-content: center;
+   flex-direction: column;
+  }
+
+  main .resultBox label {
+    font-size: 20px;
+  }
+
+   main .resultBox button {
+    width: calc( 100% - 10px );
+    max-width: 320px;
+    margin-top: 10px;
+  }
+
+  main .cardContainer .card {
+   width: 320px;
+  }
+}
