@@ -4,7 +4,7 @@ import icon from '../assets/icone@2x.png';
 import deleteIcon from '../assets/Icon-trash.png';
 import editIcon from '../assets/Icon-edit.png';
 
-import { AiOutlinePlus } from 'react-icons/ai';
+import addButton from '../assets/add.png'
 
 import { Link } from 'react-router-dom';
 
@@ -40,7 +40,7 @@ return (
       )})}
     </div>
 
-    <button className='loadMorePokemons' onClick={ fn } > <AiOutlinePlus /> </button>
+    <button className='loadMorePokemons' onClick={ fn } > <img src={ addButton } /> </button>
   </>  
   );
 }

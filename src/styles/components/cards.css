@@ -88,6 +88,11 @@ main .loadMorePokemons {
   background: #E76316;
 }
 
+main .loadMorePokemons img {
+  width: 40px;
+  height: 40px;
+}
+
 main .cardContainer .card {
   width: 234px;
   height: 267px;
