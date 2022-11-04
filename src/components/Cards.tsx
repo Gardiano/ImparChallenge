@@ -22,6 +22,8 @@ import { Loader } from '../loaders/loader';
 import { TiWeatherPartlySunny, TiWeatherCloudy } from 'react-icons/ti';
 import { WeatherTypes } from '../models/weather';
 
+import weatherIcon from '../assets/weather.png';
+
 import { ToastContainer } from 'react-toastify';
 import { warningToast, notFoundToast, successToast, editToast } from '../helpers/toast';
 
@@ -218,7 +220,7 @@ export const Cards = ( ) => {
           className='weatherOpenModal'
           onClick={ openWeatherModal }
           >
-          <TiWeatherCloudy />
+          <img src={ weatherIcon } />
         </button>
       </main>
 

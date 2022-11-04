@@ -23,13 +23,9 @@
    width: 320px;
   }
 
-  .weatherOpenModal {
-    font-size: 25px;
+  .weatherOpenModal img {
+    width: 50px;
+    height: 50px;
   }
 
-  .weatherOpenModal svg {
-    width: 35px;
-    height: 35px;
-    font-size: 25px;
-  }
 }

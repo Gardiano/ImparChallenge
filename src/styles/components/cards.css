@@ -235,6 +235,11 @@ main .cardContainer .card .cardButton button:nth-child( 2 ) label:hover {
   background: #45b6fe;
 }
 
+.weatherOpenModal img {
+  width: 60px;
+  height: 60px;
+}
+
 body #root .Toastify {
   height: 0px;
 }
