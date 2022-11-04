@@ -5,6 +5,7 @@ import '../styles/components/search.css';
 import '../styles/components/medias/search.css';
 
 export const Search = ( { value, fn, searchFn } : SearchTypes ) => {
+ 
   return (
     <>
       <section>

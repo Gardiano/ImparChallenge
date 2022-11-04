@@ -52,6 +52,11 @@
 
   top: -25px;
   left: 53px;
+  
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   position: relative;
   border-radius: 50px;

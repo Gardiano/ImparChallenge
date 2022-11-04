@@ -22,4 +22,8 @@
   main .cardContainer .card {
    width: 320px;
   }
+
+  .weatherOpenModal {
+    font-size: 25px;
+  }
 }

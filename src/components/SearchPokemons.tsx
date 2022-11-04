@@ -20,11 +20,11 @@ return (
                     <img src={ `${ obj.sprites.other.dream_world.front_default }` } alt='image' /> 
                   </Link>
                 ) : (
-                  <span> <img src={ `${ icon }` } alt='image' /> </span>
+                  <span> <img src={ icon } alt='image' /> </span>
                 )}
                 <hr />
                 
-                <label> { obj.id } { obj.name } </label>
+                <label> #{ obj.id } { obj.name } </label>
               </div>
 
               <div className='cardButton'>

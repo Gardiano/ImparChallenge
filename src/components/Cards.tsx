@@ -33,7 +33,7 @@ import '../styles/components/cards.css';
 import '../styles/components/medias/cards.css';
 
 export const Cards = ( ) => {
-  const [ input, setInput ] = useState< string > ( '' )
+  const [ input, setInput ] = useState< string > ( '' );
 
   const [ pokemons, setPokemons ] = useState < [ ] | PokemonsType | SetStateAction<any> > ( [ ] );
   const [ searchResult, setSearchResult ] = useState < any > (  );
@@ -48,7 +48,7 @@ export const Cards = ( ) => {
 
   const [ limit, setLimit ] = useState < number > ( 12 );
 
-  useEffect( (  ) => {
+  useEffect( ( ) => {
     fetchPokemon( );
     getClima( );
     if ( input.length === 0 ) {
@@ -141,7 +141,9 @@ export const Cards = ( ) => {
 
   // modal functions
   const openDelModal = ( ) => {
-    openDeleteModal === false ? ( setOpenDeleteModal( true ) ) : ( setOpenDeleteModal( false ) );
+    openDeleteModal === false ? 
+      ( setOpenDeleteModal( true ) ) 
+    : ( setOpenDeleteModal( false ) );
   }
 
   const openEditModal = ( ) => {
@@ -149,17 +151,27 @@ export const Cards = ( ) => {
   }
 
   const openNCardModal = ( ) => {
-    openNewCardModal === false ? ( setOpenNewCardModal( true ) ) : ( setOpenNewCardModal( false ) );
+    openNewCardModal === false ? 
+      ( setOpenNewCardModal( true ) ) 
+    : ( setOpenNewCardModal( false ) );
   }
 
   const openWeatherModal = ( ) => {
-    weatherOpenModal === false ? ( setWeatherOpenModal( true ) ) : ( setWeatherOpenModal( false ) );
+    weatherOpenModal === false ? 
+      ( setWeatherOpenModal( true ) ) 
+    : ( setWeatherOpenModal( false ) );
   }
 
   return (
     <>
-    { openDeleteModal === true ? ( <DeleteModal deleteFn={ openDelModal } /> ) : ( null ) }
-    { openNewCardModal === true ? ( <NewCardModal deleteFn={ openNCardModal } /> ) : ( null ) }
+    { openDeleteModal === true ? ( 
+      <DeleteModal deleteFn={ openDelModal } /> )
+     : ( null ) }
+
+    { openNewCardModal === true ? ( 
+      <NewCardModal deleteFn={ openNCardModal } /> ) 
+    : ( null ) }
+
     { weatherOpenModal === true ? (
       <WeatherModal
         id={ 0 }
@@ -171,10 +183,10 @@ export const Cards = ( ) => {
         sensation={ weather?.data.sensation }
         wind_velocity={ weather?.data.wind_velocity }
         fn={ openWeatherModal }
-      /> ) : ( null )}
+    /> ) : ( null ) }
 
       <main>
-        <Search  value={ input }  fn={ handleChange } searchFn={ fetchPokemonByName } />
+        <Search value={ input } fn={ handleChange } searchFn={ fetchPokemonByName } />
         <div className='resultBox'>
           <label> Resultado de busca </label>
           <button className='newCard' onClick={ openNCardModal }> Novo Card </button>
@@ -202,8 +214,11 @@ export const Cards = ( ) => {
             </>
         )}
 
-        <button  className='weatherOpenModal' onClick={ openWeatherModal } >
-          <TiWeatherPartlySunny /> 
+        <button
+          className='weatherOpenModal'
+          onClick={ openWeatherModal }
+          >
+          <TiWeatherPartlySunny />
         </button>
       </main>
 
