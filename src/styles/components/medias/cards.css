@@ -26,4 +26,8 @@
   .weatherOpenModal {
     font-size: 25px;
   }
+
+  .weatherOpenModal svg {
+    font-size: 25px;
+  }
 }
