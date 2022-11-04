@@ -17,4 +17,8 @@
   .deleteModalContainer .deleteModalBox div button {
     font-size: 16px;
   }
+
+  .deleteModalContainer .deleteModalBox div .closeModalButton:first-child {
+    left: 44px;
+  }
 }
