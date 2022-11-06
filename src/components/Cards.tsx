@@ -19,7 +19,6 @@ import { WeatherModal } from './modals/weatherModal';
 
 import { Loader } from '../loaders/loader';
 
-import { TiWeatherPartlySunny, TiWeatherCloudy } from 'react-icons/ti';
 import { WeatherTypes } from '../models/weather';
 
 import weatherIcon from '../assets/weather.png';
@@ -52,7 +51,7 @@ export const Cards = ( ) => {
 
   useEffect( ( ) => {
     fetchPokemon( );
-    getClima( );
+    getWeather( );
     if ( input.length === 0 ) {
       setLoadingSearchResults( false );
     }
@@ -63,7 +62,7 @@ export const Cards = ( ) => {
     setInput( e.target.value );
   }
 
-  const getClima: ( ) => void  = async ( ) => {
+  const getWeather: ( ) => void  = async ( ) => {
    try {
     const data = await getWeatherData( 5959 );
       setWeather( data );
@@ -90,7 +89,7 @@ export const Cards = ( ) => {
         setLoading( false );
      
     } catch ( e: any ) {
-      console.log( e );
+      warningToast( );
     }
   }
 
@@ -116,7 +115,7 @@ export const Cards = ( ) => {
       return result;
 
     } catch ( e: any ) {
-      console.log( e );
+      warningToast( );
     }
 
   }
@@ -125,19 +124,17 @@ export const Cards = ( ) => {
     try {
       let name = input.toLowerCase( );
       const data = await getPokemonDataByIdOrName( name );
-      
+
       if( name.length >= 2 ) {
         if( name === data.name ) {
           setSearchResult( data );
-          setLoadingSearchResults( true );
-          successToast( );
-        } else {
-          notFoundToast( );
+            setLoadingSearchResults( true );
+              successToast( );
         }
       }
       
     } catch( e: any ) {
-         warningToast( )
+       warningToast( );
     }
   }
 
