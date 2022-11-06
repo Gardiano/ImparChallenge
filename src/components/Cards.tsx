@@ -51,7 +51,7 @@ export const Cards = ( ) => {
 
   useEffect( ( ) => {
     fetchPokemon( );
-    getWeather( );
+    // getWeather( );
     if ( input.length === 0 ) {
       setLoadingSearchResults( false );
     }
