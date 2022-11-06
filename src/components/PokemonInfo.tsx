@@ -23,9 +23,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const PokemonInfo = ( ) => {
 
-let params = useParams().id;
+let params = useParams( ).id;
 
-const [ pokemon, setPokemon ] = useState < PokemonsInfoType > (  );
+const [ pokemon, setPokemon ] = useState < PokemonsInfoType > ( Object );
 const [ loading, setLoading ] = useState < boolean > ( false );
 
 useEffect( ( ) => {
@@ -37,8 +37,10 @@ const getPokemonById: ( ) => void = async ( ) => {
   try {
     let id = params;
     const data = await getPokemonDataByIdOrName( id );
+    if( data !== undefined ) {
       setPokemon( data );
         setLoading( true );
+    }
   } catch( e: any ) {
       warningToast( );
   }
@@ -47,27 +49,27 @@ const getPokemonById: ( ) => void = async ( ) => {
 return (
   <>
     { loading === true ? (
-      <div className='pokemonInfoContainer'>
+      <div className='pokemonInfoContainer' >
         <Link to='/'> <BsArrowLeftCircle /> </Link>
         <div className='pokemonInfoBox'>
           <span>
-            <img src={ pokemon?.sprites.other.dream_world.front_default } alt='image' />
+            <img src={ pokemon.sprites.other.dream_world.front_default } alt='image' />
           </span>
 
-          <h1> #{ pokemon?.id } { pokemon?.name } </h1>
+          <h1> #{ pokemon.id } { pokemon.name } </h1>
           
           <div>
-            { pokemon?.stats.map( ( stat: PokemonsInfoType ) => {
+            { pokemon.stats.map( ( stat: PokemonsInfoType ) => {
               return (
                 <>
-                <label> 
-                    { stat.stat.name }
-                      <ProgressBar 
-                        striped variant='success'
-                        label={`${stat.base_stat}%`}
-                        now={ stat.base_stat } 
-                      />
-                </label>
+                  <label>
+                      { stat.stat.name }
+                        <ProgressBar 
+                          striped variant='success'
+                          label={`${stat.base_stat}%`}
+                          now={ stat.base_stat } 
+                        />
+                  </label>
                 </>
               )
             })}

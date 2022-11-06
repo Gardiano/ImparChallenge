@@ -14,14 +14,13 @@ return (
   <>
     <div className='cardContainer'>
             <div className='card'>
-              <div className='cardItens'>
+              <div className='cardItens' >
                 { obj.sprites.other.dream_world.front_default ? (
                   <Link to={ `/pokemon/${ obj.id }` }> 
                     <img src={ `${ obj.sprites.other.dream_world.front_default }` } alt='image' /> 
                   </Link>
-                ) : (
-                  <span> <img src={ icon } alt='image' /> </span>
-                )}
+                ) : ( <span> <img src={ icon } alt='image' /> </span> )}
+                
                 <hr />
                 
                 <label> #{ obj.id } { obj.name } </label>

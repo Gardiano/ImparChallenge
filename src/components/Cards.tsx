@@ -51,11 +51,14 @@ export const Cards = ( ) => {
 
   useEffect( ( ) => {
     fetchPokemon( );
-    // getWeather( );
+    getWeather( );
+
     if ( input.length === 0 ) {
       setLoadingSearchResults( false );
     }
+
     window.scrollTo( 0, 0 );
+
   }, [ input ] );
 
   const handleChange: any = ( e: React.ChangeEvent<HTMLTextAreaElement> ) => {
@@ -194,22 +197,20 @@ export const Cards = ( ) => {
         { loading === true ? ( <Loader /> ) : (
             <>
               { loadingSearchResults === true ? ( 
-                  <SearchPokemons
-                    deleteFn={ openDelModal }
-                    editFn={ openEditModal }
-                    index={ searchResult?.id }
-                    obj={ searchResult }
-                    id={ 0 }
-                  /> )
-                : ( <Pokemons
-                    deleteFn={ openDelModal }
-                    editFn={ openEditModal }
-                    index={ pokemons.id }
-                    arr={ pokemons }
-                    fn={ fetchMorePokemons }
-                    id={ 0 } 
-                  />
-                )}
+                <SearchPokemons
+                  index= {searchResult.id }
+                  obj={ searchResult }
+                  deleteFn={ openDelModal }
+                  editFn={ openEditModal }
+                /> ) : (
+                <Pokemons
+                  index={ pokemons.id }
+                  arr={ pokemons }
+                  fn={ fetchMorePokemons }
+                  deleteFn={ openDelModal }
+                  editFn={ openEditModal }
+                />
+              )}
             </>
         )}
 

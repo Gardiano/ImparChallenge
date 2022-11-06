@@ -12,4 +12,4 @@ export type PokemonsInfoType = {
     name: string
   }
   base_stat: number
-  }
+}

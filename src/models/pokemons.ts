@@ -1,10 +1,9 @@
 
 export default interface PokemonsType {
-  index: number
-  id: number,
-  arr?: [], 
-  fn?: ( ) => void
-  deleteFn: ( ) => void
-  editFn: ( ) => void
   obj?: any
+  arr?: [ ], 
+  index: number
+  fn?: ( ) => void
+  editFn: ( ) => void
+  deleteFn: ( ) => void
 }
