@@ -165,29 +165,28 @@ export const Cards = ( ) => {
   }
 
   return (
-    <>
-    { openDeleteModal === true ? ( 
-      <DeleteModal deleteFn={ openDelModal } /> )
-     : ( null ) }
+    <main>
+        { openDeleteModal === true ? ( 
+        <DeleteModal deleteFn={ openDelModal } /> )
+        : ( null ) }
 
-    { openNewCardModal === true ? ( 
-      <NewCardModal deleteFn={ openNCardModal } /> ) 
-    : ( null ) }
+        { openNewCardModal === true ? ( 
+          <NewCardModal deleteFn={ openNCardModal } /> ) 
+        : ( null ) }
 
-    { weatherOpenModal === true ? (
-      <WeatherModal
-        id={ 0 }
-        name={ weather?.name }
-        state={ weather?.state }
-        temperature={ weather?.data.temperature }
-        humidity={ weather?.data.humidity }
-        condition={ weather?.data.condition }
-        sensation={ weather?.data.sensation }
-        wind_velocity={ weather?.data.wind_velocity }
-        fn={ openWeatherModal }
-    /> ) : ( null ) }
+        { weatherOpenModal === true ? (
+          <WeatherModal
+            id={ 0 }
+            name={ weather.name }
+            state={ weather.state }
+            temperature={ weather.data.temperature }
+            humidity={ weather.data.humidity }
+            condition={ weather.data.condition }
+            sensation={ weather.data.sensation }
+            wind_velocity={ weather.data.wind_velocity }
+            fn={ openWeatherModal }
+        /> ) : ( null ) }
 
-      <main>
         <Search value={ input } fn={ handleChange } searchFn={ fetchPokemonByName } />
         <div className='resultBox'>
           <label> Resultado de busca </label>
@@ -220,22 +219,21 @@ export const Cards = ( ) => {
           >
           <img src={ weatherIcon } />
         </button>
-      </main>
 
-      <ToastContainer
-        position="bottom-right"
-        autoClose={ 2000 }
-        hideProgressBar
-        newestOnTop={ false }
-        closeOnClick
-        rtl={ false }
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        limit={ 1 }
+        <ToastContainer
+          position="bottom-right"
+          autoClose={ 2000 }
+          hideProgressBar
+          newestOnTop={ false }
+          closeOnClick
+          rtl={ false }
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          limit={ 1 }
       />
-    </>
-    );
+  </main>
+  );
 }
   
 
