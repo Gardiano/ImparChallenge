@@ -165,6 +165,8 @@ export const Cards = ( ) => {
   }
 
   return (
+    <>
+    
     <main>
         { openDeleteModal === true ? ( 
         <DeleteModal deleteFn={ openDelModal } /> )
@@ -177,13 +179,13 @@ export const Cards = ( ) => {
         { weatherOpenModal === true ? (
           <WeatherModal
             id={ 0 }
-            name={ weather.name }
-            state={ weather.state }
-            temperature={ weather.data.temperature }
-            humidity={ weather.data.humidity }
-            condition={ weather.data.condition }
-            sensation={ weather.data.sensation }
-            wind_velocity={ weather.data.wind_velocity }
+            name={ weather?.name }
+            state={ weather?.state }
+            temperature={ weather?.data.temperature }
+            humidity={ weather?.data.humidity }
+            condition={ weather?.data.condition }
+            sensation={ weather?.data.sensation }
+            wind_velocity={ weather?.data.wind_velocity }
             fn={ openWeatherModal }
         /> ) : ( null ) }
 
@@ -233,6 +235,7 @@ export const Cards = ( ) => {
           limit={ 1 }
       />
   </main>
+  </>
   );
 }
   
