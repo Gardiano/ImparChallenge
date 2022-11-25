@@ -1,5 +1,5 @@
 
-import { SetStateAction, useEffect, useState } from 'react';
+import { SetStateAction, useLayoutEffect, useState, useEffect } from 'react';
 
 import axios from 'axios';
 
@@ -19,12 +19,13 @@ import { WeatherModal } from './modals/weatherModal';
 
 import { Loader } from '../loaders/loader';
 
-import { WeatherTypes } from '../models/weather';
 
-import weatherIcon from '../assets/weather.png';
 
 import { ToastContainer } from 'react-toastify';
-import { warningToast, notFoundToast, successToast, editToast } from '../helpers/toast';
+
+import { warningToast, successToast, editToast } from '../helpers/toast';
+
+import weatherIcon from '../assets/weather.png';
 
 import PokemonsType from '../models/pokemons';
 
@@ -38,7 +39,6 @@ export const Cards = ( ) => {
 
   const [ pokemons, setPokemons ] = useState < [ ] | PokemonsType | SetStateAction<any> > ( [ ] );
   const [ searchResult, setSearchResult ] = useState < any > (  );
-  const [ weather, setWeather ] = useState < WeatherTypes | SetStateAction<any> > (  );
 
   const [ loading , setLoading ]  = useState < boolean > ( true );
   const [ loadingSearchResults, setLoadingSearchResults ] = useState <boolean> ( false );
@@ -51,28 +51,15 @@ export const Cards = ( ) => {
 
   useEffect( ( ) => {
     fetchPokemon( );
-    getWeather( );
-
     if ( input.length === 0 ) {
       setLoadingSearchResults( false );
     }
-
-    window.scrollTo( 0, 0 );
-
   }, [ input ] );
 
   const handleChange: any = ( e: React.ChangeEvent<HTMLTextAreaElement> ) => {
     setInput( e.target.value );
   }
 
-  const getWeather: ( ) => void  = async ( ) => {
-   try {
-    const data = await getWeatherData( 5959 );
-      setWeather( data );
-   } catch ( e: any ) {
-      console.log( e )
-   }
-  }
 
   const fetchPokemon = async ( ) => {
     try {
@@ -87,10 +74,9 @@ export const Cards = ( ) => {
         .then( ( res ) => {
           return res.data;
         })));
-      
         setPokemons( result );
         setLoading( false );
-     
+        
     } catch ( e: any ) {
       warningToast( );
     }
@@ -114,7 +100,6 @@ export const Cards = ( ) => {
 
       setLimit( newLimit );
       setPokemons( [...result] );
-      
       return result;
 
     } catch ( e: any ) {
@@ -165,79 +150,68 @@ export const Cards = ( ) => {
   }
 
   return (
-    <>
-    
     <main>
-        { openDeleteModal === true ? ( 
+      { openDeleteModal === true ? ( 
         <DeleteModal deleteFn={ openDelModal } /> )
-        : ( null ) }
+      : ( null ) }
 
-        { openNewCardModal === true ? ( 
-          <NewCardModal deleteFn={ openNCardModal } /> ) 
-        : ( null ) }
+      { openNewCardModal === true ? ( 
+        <NewCardModal deleteFn={ openNCardModal } /> ) 
+      : ( null ) }
 
-        { weatherOpenModal === true ? (
-          <WeatherModal
-            id={ 0 }
-            name={ weather?.name }
-            state={ weather?.state }
-            temperature={ weather?.data.temperature }
-            humidity={ weather?.data.humidity }
-            condition={ weather?.data.condition }
-            sensation={ weather?.data.sensation }
-            wind_velocity={ weather?.data.wind_velocity }
-            fn={ openWeatherModal }
-        /> ) : ( null ) }
+      { weatherOpenModal === true ? (
+        <WeatherModal fn={ openWeatherModal }
+      /> ) : ( null ) }
 
-        <Search value={ input } fn={ handleChange } searchFn={ fetchPokemonByName } />
-        <div className='resultBox'>
-          <label> Resultado de busca </label>
-          <button className='newCard' onClick={ openNCardModal }> Novo Card </button>
-        </div>
-         
-        { loading === true ? ( <Loader /> ) : (
-            <>
-              { loadingSearchResults === true ? ( 
-                <SearchPokemons
-                  index= {searchResult.id }
-                  obj={ searchResult }
-                  deleteFn={ openDelModal }
-                  editFn={ openEditModal }
-                /> ) : (
-                <Pokemons
-                  index={ pokemons.id }
-                  arr={ pokemons }
-                  fn={ fetchMorePokemons }
-                  deleteFn={ openDelModal }
-                  editFn={ openEditModal }
-                />
-              )}
-            </>
-        )}
-
-        <button
-          className='weatherOpenModal'
-          onClick={ openWeatherModal }
-          >
-          <img src={ weatherIcon } />
-        </button>
-
-        <ToastContainer
-          position="bottom-right"
-          autoClose={ 2000 }
-          hideProgressBar
-          newestOnTop={ false }
-          closeOnClick
-          rtl={ false }
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          limit={ 1 }
+      <Search 
+        value={ input } 
+        fn={ handleChange } 
+        searchFn={ fetchPokemonByName } 
       />
-  </main>
-  </>
+      
+      <div className='resultBox'>
+        <label> Resultado de busca </label>
+        <button className='newCard' onClick={ openNCardModal }> Novo Card </button>
+      </div>
+        
+      { loading === true ? ( <Loader /> ) : (
+        <>
+          { loadingSearchResults === true ? ( 
+            <SearchPokemons
+              index= { searchResult.id }
+              obj={ searchResult }
+              deleteFn={ openDelModal }
+              editFn={ openEditModal }
+            /> ) : (
+            <Pokemons
+              index={ pokemons.id }
+              arr={ pokemons }
+              fn={ fetchMorePokemons }
+              deleteFn={ openDelModal }
+              editFn={ openEditModal }
+            />
+          )}
+        </>
+      )}
+
+      <button
+        className='weatherOpenModal'
+        onClick={ openWeatherModal } >
+        <img src={ weatherIcon } />
+      </button>
+
+      <ToastContainer
+        position="bottom-right"
+        autoClose={ 2000 }
+        hideProgressBar
+        newestOnTop={ false }
+        closeOnClick
+        rtl={ false }
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        limit={ 1 }
+      />
+    </main>
   );
 }
-  
-
-  

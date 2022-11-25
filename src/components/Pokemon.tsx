@@ -1,4 +1,5 @@
 
+import { useLayoutEffect, useState, useEffect } from 'react';
 
 import icon from '../assets/icone@2x.png';
 import deleteIcon from '../assets/Icon-trash.png';
@@ -12,13 +13,16 @@ import PokemonsType from '../models/pokemons';
 
 import '../styles/components/cards.css';
 
+
 export const Pokemons = ( { arr, fn, deleteFn, editFn } : PokemonsType ) => {
+
 return <>
   <div className='cardContainer'>
     { arr!.map( ( data: any, index: number ) => {
       return (
           <div className='card' key={ index } >
-            <div className='cardItens'>
+            <div className='cardItens'
+            >
               { data.sprites.other.dream_world.front_default ? (
                 <Link to={ `/pokemon/${data.id}` }> 
                   <img src={ data.sprites.other.dream_world.front_default } alt='image' /> 

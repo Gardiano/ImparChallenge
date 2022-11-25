@@ -1,3 +1,4 @@
+import { CSSProperties } from "react"
 
 export default interface PokemonsType {
   obj?: any
